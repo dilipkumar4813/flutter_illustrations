@@ -35,6 +35,24 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Basic Containers"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.dialogs);
+              },
+              child: const Text("Basic Dialogs"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.appBar);
+              },
+              child: const Text("App bar"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.basicForm);
+              },
+              child: const Text("Form"),
+            ),
             const Icon(
               Icons.abc_outlined,
               color: Colors.red,
