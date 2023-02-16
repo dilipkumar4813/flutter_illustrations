@@ -37,7 +37,7 @@ class _BasicFormState extends State<BasicForm> {
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Invalid entry");
+                        return ("Name cannot be empty");
                       }
                       return null;
                     },
@@ -47,11 +47,11 @@ class _BasicFormState extends State<BasicForm> {
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.phone),
                       hintText: 'Enter your phone number',
-                      labelText: 'phone number',
+                      labelText: 'Phone number',
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Invalid entry");
+                        return ("Phone number cannot be empty");
                       }
                       return null;
                     },
@@ -68,7 +68,7 @@ class _BasicFormState extends State<BasicForm> {
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Invalid entry");
+                        return ("Email address cannot be empty");
                       }
                       return null;
                     },
@@ -79,6 +79,7 @@ class _BasicFormState extends State<BasicForm> {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
                   print("Test $emailAddress");
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
