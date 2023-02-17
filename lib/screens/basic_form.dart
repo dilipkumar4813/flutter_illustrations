@@ -9,7 +9,26 @@ class BasicForm extends StatefulWidget {
 
 class _BasicFormState extends State<BasicForm> {
   final _formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
   String emailAddress = "";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    nameController.addListener(_printNameValue);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    nameController.dispose();
+    super.dispose();
+  }
+
+  void _printNameValue() {
+    print("Name value is ${nameController.text}");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +48,7 @@ class _BasicFormState extends State<BasicForm> {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: nameController,
                     keyboardType: TextInputType.name,
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.person),
