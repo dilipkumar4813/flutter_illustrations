@@ -7,4 +7,5 @@ Map basicRoutes = {
   AppRoutes.dialogs: (context) => const BasicDialogs(),
   AppRoutes.appBar: (context) => const BasicAppBar(),
   AppRoutes.basicForm: (context) => const BasicForm(),
+  AppRoutes.basicHttp: (context) => const BasicHttp(),
 };
