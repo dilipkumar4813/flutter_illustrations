@@ -5,4 +5,5 @@ class AppRoutes {
   static String appBar = '/appbar';
   static String basicForm = '/basicForm';
   static String basicHttp = '/basicHttp';
+  static String basicChange = '/basicChangeNotifier';
 }

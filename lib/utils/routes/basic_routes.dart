@@ -8,4 +8,5 @@ Map basicRoutes = {
   AppRoutes.appBar: (context) => const BasicAppBar(),
   AppRoutes.basicForm: (context) => const BasicForm(),
   AppRoutes.basicHttp: (context) => const BasicHttp(),
+  AppRoutes.basicChange: (context) => const BasicChangeNotifier(),
 };

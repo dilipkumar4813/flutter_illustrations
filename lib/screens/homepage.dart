@@ -59,6 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("HTTP Call"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.basicChange);
+              },
+              child: const Text("Change Notifier"),
+            ),
             const Icon(
               Icons.abc_outlined,
               color: Colors.red,

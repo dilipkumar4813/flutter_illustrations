@@ -4,3 +4,4 @@ export '../screens/basic_dialogs.dart';
 export '../screens/basic_appbar.dart';
 export '../screens/basic_form.dart';
 export '../screens/basic_http.dart';
+export '../screens/basic_change_notifier.dart';

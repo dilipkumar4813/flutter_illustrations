@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../models/album.dart';
 import 'dart:convert';
+import 'package:provider/provider.dart';
+
+class test extends ChangeNotifier {}
 
 class BasicHttp extends StatefulWidget {
   const BasicHttp({super.key});
@@ -33,18 +36,24 @@ class _BasicHttp extends State<BasicHttp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder<Album>(
-        future: futureAlbum,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Text(snapshot.data!.title);
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
+      body: SafeArea(
+        child: Column(
+          children: [
+            FutureBuilder<Album>(
+              future: futureAlbum,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data!.title);
+                } else if (snapshot.hasError) {
+                  return Text('${snapshot.error}');
+                }
 
-          // By default, show a loading spinner.
-          return const CircularProgressIndicator();
-        },
+                // By default, show a loading spinner.
+                return const CircularProgressIndicator();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

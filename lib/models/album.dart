@@ -1,9 +1,11 @@
-class Album {
+import 'package:flutter/widgets.dart';
+
+class Album extends ChangeNotifier {
   final int userId;
   final int id;
   final String title;
 
-  const Album({
+  Album({
     required this.userId,
     required this.id,
     required this.title,
@@ -15,5 +17,9 @@ class Album {
       id: json['id'],
       title: json['title'],
     );
+  }
+
+  void updateContent() {
+    notifyListeners();
   }
 }

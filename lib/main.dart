@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'utils/routes/route_strings.dart';
 import 'utils/routes/basic_routes.dart';
+import 'models/person.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  //runApp(const MyApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Person(age: 25, name: "Wick"),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
