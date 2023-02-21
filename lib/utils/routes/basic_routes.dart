@@ -9,4 +9,5 @@ Map basicRoutes = {
   AppRoutes.basicForm: (context) => const BasicForm(),
   AppRoutes.basicHttp: (context) => const BasicHttp(),
   AppRoutes.basicChange: (context) => const BasicChangeNotifier(),
+  AppRoutes.basicList: (context) => const BasicList(),
 };

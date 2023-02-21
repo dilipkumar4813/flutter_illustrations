@@ -11,14 +11,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, AppRoutes.basicChange);
               },
               child: const Text("Change Notifier"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.basicList);
+              },
+              child: const Text("Basic Lists"),
             ),
             const Icon(
               Icons.abc_outlined,
