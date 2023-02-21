@@ -10,4 +10,5 @@ Map basicRoutes = {
   AppRoutes.basicHttp: (context) => const BasicHttp(),
   AppRoutes.basicChange: (context) => const BasicChangeNotifier(),
   AppRoutes.basicList: (context) => const BasicList(),
+  AppRoutes.basicScrollView: (context) => const BasicScrollView(),
 };

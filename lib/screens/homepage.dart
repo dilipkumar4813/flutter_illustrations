@@ -63,6 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Basic Lists"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.basicScrollView);
+              },
+              child: const Text("Basic Scrollview"),
+            ),
             const Icon(
               Icons.abc_outlined,
               color: Colors.red,

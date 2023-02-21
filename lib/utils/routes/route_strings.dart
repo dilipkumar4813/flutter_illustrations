@@ -8,4 +8,5 @@ class AppRoutes {
   static String basicChange = '/basicChangeNotifier';
   static String basicList = '/basicList';
   static String basicListDetail = '/basicListDetail';
+  static String basicScrollView = '/basicScrollView';
 }
