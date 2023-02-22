@@ -11,4 +11,5 @@ Map basicRoutes = {
   AppRoutes.basicChange: (context) => const BasicChangeNotifier(),
   AppRoutes.basicList: (context) => const BasicList(),
   AppRoutes.basicScrollView: (context) => const BasicScrollView(),
+  AppRoutes.basicNestedScrollView: (context) => const BasicNestedScrollView(),
 };

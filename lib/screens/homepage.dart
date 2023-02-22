@@ -69,6 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Basic Scrollview"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.basicNestedScrollView);
+              },
+              child: const Text("Basic Nested Scrollview"),
+            ),
             const Icon(
               Icons.abc_outlined,
               color: Colors.red,
