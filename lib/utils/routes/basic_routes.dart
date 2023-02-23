@@ -12,4 +12,5 @@ Map basicRoutes = {
   AppRoutes.basicList: (context) => const BasicList(),
   AppRoutes.basicScrollView: (context) => const BasicScrollView(),
   AppRoutes.basicNestedScrollView: (context) => const BasicNestedScrollView(),
+  AppRoutes.basicGridView: (context) => const BasicGridView(),
 };

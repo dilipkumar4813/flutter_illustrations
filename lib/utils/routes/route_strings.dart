@@ -10,4 +10,5 @@ class AppRoutes {
   static String basicListDetail = '/basicListDetail';
   static String basicScrollView = '/basicScrollView';
   static String basicNestedScrollView = '/basicNestedScrollView';
+  static String basicGridView = '/basicGridView';
 }
