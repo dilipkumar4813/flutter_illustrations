@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/person.dart';
+import '../../models/person.dart';
 import 'package:provider/provider.dart';
 
 class BasicChangeNotifier extends StatefulWidget {

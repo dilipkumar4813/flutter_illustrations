@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_illustrations/utils/screens.dart';
-import '../models/tlist.dart';
+import '../../models/tlist.dart';
 
 class BasicList extends StatefulWidget {
   const BasicList({super.key});

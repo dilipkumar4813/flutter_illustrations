@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/tlist.dart';
+import '../../models/tlist.dart';
 
 class BasicListDetais extends StatefulWidget {
   const BasicListDetais({super.key, required this.tlist});
