@@ -10,3 +10,4 @@ export '../screens/basic/basic_list_details.dart';
 export '../screens/basic/basic_scrollview.dart';
 export '../screens/basic/basic_nested_scrollview.dart';
 export '../screens/basic/basic_gridview.dart';
+export '../screens/animate/text_animations.dart';

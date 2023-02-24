@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/routes/route_animations.dart';
 import 'package:flutter_illustrations/utils/routes/route_strings.dart';
 import '../models/home.dart';
 
@@ -13,6 +14,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Home> routes = [
+    Home(
+        route: AppAnimationsRoutes.textAnimations,
+        buttonTitle: "Text Animations"),
     Home(route: AppRoutes.containers, buttonTitle: "Basic Container"),
     Home(route: AppRoutes.dialogs, buttonTitle: "Basic Dialogs"),
     Home(route: AppRoutes.appBar, buttonTitle: "Basic Appbar"),
@@ -26,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
         buttonTitle: "Basic Nested Scrollview"),
     Home(route: AppRoutes.basicGridView, buttonTitle: "Basic Gridview"),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

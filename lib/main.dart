@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/routes/animation_routes.dart';
 import 'utils/routes/route_strings.dart';
 import 'utils/routes/basic_routes.dart';
 import 'models/person.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MyHomePage(title: "Testing the values"),
       initialRoute: AppRoutes.home,
-      routes: {...basicRoutes},
+      routes: {...basicRoutes, ...animationRoutes},
     );
   }
 }
