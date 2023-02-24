@@ -14,7 +14,48 @@ class TextAnimations extends StatelessWidget {
         ),
         title: const Text("Text Animations"),
       ),
-      body: const RotateText(),
+      body: Column(
+        children: [
+          const RotateText(),
+          const FadeText(),
+        ],
+      ),
+    );
+  }
+}
+
+class FadeText extends StatelessWidget {
+  const FadeText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.teal,
+      height: 150,
+      width: MediaQuery.of(context).size.width,
+      child: Center(
+        child: DefaultTextStyle(
+          style: const TextStyle(
+            fontSize: 32.0,
+            fontFamily: 'Orbitron',
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          child: AnimatedTextKit(
+            animatedTexts: [
+              FadeAnimatedText('Are you!'),
+              FadeAnimatedText('Are you Doing!!'),
+              FadeAnimatedText('Are you Doing Great!!!'),
+            ],
+            isRepeatingAnimation: true,
+            onTap: () {
+              print("Tap Event");
+            },
+          ),
+        ),
+      ),
     );
   }
 }
@@ -28,6 +69,7 @@ class RotateText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.yellow,
+      height: 150,
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -52,6 +94,7 @@ class RotateText extends StatelessWidget {
                 RotateAnimatedText('OPTIMISTIC'),
                 RotateAnimatedText('DIFFERENT'),
               ],
+              isRepeatingAnimation: true,
               onTap: () {
                 print("Tap Event");
               },
