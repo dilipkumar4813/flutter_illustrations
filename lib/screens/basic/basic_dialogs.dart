@@ -12,7 +12,7 @@ class BasicDialogs extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text("Form build"),
+        title: const Text("Basic Dialogs"),
       ),
       body: SafeArea(
         child: Container(
