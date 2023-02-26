@@ -11,3 +11,4 @@ export '../screens/basic/basic_scrollview.dart';
 export '../screens/basic/basic_nested_scrollview.dart';
 export '../screens/basic/basic_gridview.dart';
 export '../screens/animate/text_animations.dart';
+export '../screens/animate/image_carousel.dart';

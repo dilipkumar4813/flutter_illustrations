@@ -15,6 +15,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<Home> routes = [
     Home(
+        route: AppAnimationsRoutes.imageCarouselAnimation,
+        buttonTitle: "Image Carousel"),
+    Home(
         route: AppAnimationsRoutes.textAnimations,
         buttonTitle: "Text Animations"),
     Home(route: AppRoutes.containers, buttonTitle: "Basic Container"),
