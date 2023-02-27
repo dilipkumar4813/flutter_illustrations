@@ -5,4 +5,6 @@ Map animationRoutes = {
   AppAnimationsRoutes.textAnimations: (context) => const TextAnimations(),
   AppAnimationsRoutes.imageCarouselAnimation: (context) =>
       const ImageCarouselScreen(),
+  AppAnimationsRoutes.materialDialogs: (context) =>
+      const MaterialDialogsScreen(),
 };

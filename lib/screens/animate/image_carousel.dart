@@ -29,34 +29,39 @@ class _ImageCarouselScreenState extends State<ImageCarouselScreen> {
       body: Column(
         children: [
           CarouselSlider(
-            options: CarouselOptions(height: 250.0),
-            items: [1, 2, 3, 4, 5].map((i) {
-              return Builder(
-                builder: (BuildContext context) {
-                  return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                    decoration: const BoxDecoration(color: Colors.black),
-                    child: Column(
-                      children: [
-                        Image.network(animals[i - 1],
-                            width: MediaQuery.of(context).size.width,
-                            height: 200,
-                            fit: BoxFit.cover),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          'Beast $i',
-                          style: const TextStyle(
-                              fontSize: 18.0, color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              );
-            }).toList(),
+            options: CarouselOptions(
+              height: 250.0,
+              initialPage: 0,
+            ),
+            items: [1, 2, 3, 4, 5].map(
+              (i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                      decoration: const BoxDecoration(color: Colors.black),
+                      child: Column(
+                        children: [
+                          Image.network(animals[i - 1],
+                              width: MediaQuery.of(context).size.width,
+                              height: 200,
+                              fit: BoxFit.cover),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            'Beast $i',
+                            style: const TextStyle(
+                                fontSize: 18.0, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+            ).toList(),
           )
         ],
       ),
