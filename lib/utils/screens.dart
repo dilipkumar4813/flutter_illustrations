@@ -13,3 +13,4 @@ export '../screens/basic/basic_gridview.dart';
 export '../screens/animate/text_animations.dart';
 export '../screens/animate/image_carousel.dart';
 export '../screens/animate/material_dialogs.dart';
+export '../screens/animate/lottie_animations.dart';

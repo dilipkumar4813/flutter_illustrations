@@ -7,4 +7,5 @@ Map animationRoutes = {
       const ImageCarouselScreen(),
   AppAnimationsRoutes.materialDialogs: (context) =>
       const MaterialDialogsScreen(),
+  AppAnimationsRoutes.lottieAnimation: (context) => const LottieScreen(),
 };

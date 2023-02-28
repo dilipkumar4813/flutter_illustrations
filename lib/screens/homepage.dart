@@ -14,6 +14,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Home> routes = [
+    Home(route: AppAnimationsRoutes.lottieAnimation, buttonTitle: "Lottie"),
     Home(
         route: AppAnimationsRoutes.materialDialogs,
         buttonTitle: "Material Dialogs"),
