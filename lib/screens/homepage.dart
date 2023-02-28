@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import 'package:flutter_illustrations/utils/routes/route_animations.dart';
 import 'package:flutter_illustrations/utils/routes/route_strings.dart';
-import '../models/home.dart';
+import 'package:lottie/lottie.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -13,31 +14,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Home> routes = [
-    Home(route: AppAnimationsRoutes.lottieAnimation, buttonTitle: "Lottie"),
-    Home(
-        route: AppAnimationsRoutes.materialDialogs,
-        buttonTitle: "Material Dialogs"),
-    Home(
-        route: AppAnimationsRoutes.imageCarouselAnimation,
-        buttonTitle: "Image Carousel"),
-    Home(
-        route: AppAnimationsRoutes.textAnimations,
-        buttonTitle: "Text Animations"),
-    Home(route: AppRoutes.containers, buttonTitle: "Basic Container"),
-    Home(route: AppRoutes.dialogs, buttonTitle: "Basic Dialogs"),
-    Home(route: AppRoutes.appBar, buttonTitle: "Basic Appbar"),
-    Home(route: AppRoutes.basicForm, buttonTitle: "Basic Form"),
-    Home(route: AppRoutes.basicHttp, buttonTitle: "Basic HTTP"),
-    Home(route: AppRoutes.basicChange, buttonTitle: "Change Notifier"),
-    Home(route: AppRoutes.basicList, buttonTitle: "Basic List"),
-    Home(route: AppRoutes.basicScrollView, buttonTitle: "Basic Scrollview"),
-    Home(
-        route: AppRoutes.basicNestedScrollView,
-        buttonTitle: "Basic Nested Scrollview"),
-    Home(route: AppRoutes.basicGridView, buttonTitle: "Basic Gridview"),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,50 +29,102 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Flutter References'),
+              child: Text(
+                'Flutter References',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
             ),
             ListTile(
               leading: const FlutterLogo(),
-              title: const Text('Basics'),
-              onTap: () {},
+              title: Text(AppStrings.basic),
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.basics);
+              },
             ),
             ListTile(
               leading: const Icon(
                 Icons.animation,
                 color: Colors.blue,
               ),
-              title: const Text('Animations'),
-              onTap: () {},
+              title: Text(AppStrings.animation),
+              onTap: () {
+                Navigator.pushNamed(context, AppAnimationsRoutes.appAnimations);
+              },
             ),
           ],
         ),
       ),
       body: SingleChildScrollView(
-        child: GridView.count(
-          shrinkWrap: true,
-          physics: ScrollPhysics(),
-          crossAxisCount: 2,
-          crossAxisSpacing: 4.0,
-          mainAxisSpacing: 8.0,
-          children: List.generate(
-            routes.length,
-            (index) {
-              return Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.teal,
-                  child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, routes[index].route);
-                      },
-                      child: Text("${routes[index].buttonTitle}"),
-                    ),
-                  ),
-                ),
-              );
-            },
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              AppStrings.appName,
+              style: const TextStyle(
+                fontFamily: 'Rampart One',
+                fontSize: 28.0,
+                color: Colors.purple,
+              ),
+            ),
+            Lottie.asset(
+              'assets/lottie/happy-students-studying.json',
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.fill,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  ButtonNavigation(route: 1),
+                  ButtonNavigation(route: 2),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ButtonNavigation extends StatelessWidget {
+  const ButtonNavigation({
+    super.key,
+    required this.route,
+  });
+
+  final int route;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: ElevatedButton(
+        onPressed: () {
+          if (route == 1) {
+            Navigator.pushNamed(context, AppRoutes.basics);
+          } else {
+            Navigator.pushNamed(context, AppAnimationsRoutes.appAnimations);
+          }
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                side: const BorderSide(color: Colors.purple)),
+          ),
+        ),
+        child: Text(
+          route == 1 ? AppStrings.basic : AppStrings.animation,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
       ),

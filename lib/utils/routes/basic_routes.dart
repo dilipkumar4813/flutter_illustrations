@@ -2,7 +2,8 @@ import 'route_strings.dart';
 import '../screens.dart';
 
 Map basicRoutes = {
-  AppRoutes.home: (context) => const MyHomePage(title: "Initial"),
+  AppRoutes.home: (context) => const MyHomePage(title: "Home"),
+  AppRoutes.basics: (context) => const BasicScreens(),
   AppRoutes.containers: (context) => const BasicContainers(),
   AppRoutes.dialogs: (context) => const BasicDialogs(),
   AppRoutes.appBar: (context) => const BasicAppBar(),

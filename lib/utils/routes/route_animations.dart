@@ -1,6 +1,7 @@
 class AppAnimationsRoutes {
-  static String textAnimations = "/textAnimations";
-  static String imageCarouselAnimation = '/imageCarousel';
-  static String materialDialogs = '/materialDialog';
-  static String lottieAnimation = '/lottieAnimation';
+  static String appAnimations = '/animations';
+  static String textAnimations = '/animations/textAnimations';
+  static String imageCarouselAnimation = '/animations/imageCarousel';
+  static String materialDialogs = '/animations/materialDialog';
+  static String lottieAnimation = '/animations/lottieAnimation';
 }
