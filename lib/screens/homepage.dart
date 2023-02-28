@@ -44,6 +44,33 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Flutter References'),
+            ),
+            ListTile(
+              leading: const FlutterLogo(),
+              title: const Text('Basics'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.animation,
+                color: Colors.blue,
+              ),
+              title: const Text('Animations'),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: GridView.count(
           shrinkWrap: true,
