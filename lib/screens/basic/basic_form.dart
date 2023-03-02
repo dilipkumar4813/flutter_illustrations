@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 
 class BasicForm extends StatefulWidget {
   const BasicForm({super.key});
@@ -37,7 +38,7 @@ class _BasicFormState extends State<BasicForm> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text("Form build"),
+        title: Text(AppStrings.formTitle),
       ),
       body: SafeArea(
         child: Column(
@@ -49,28 +50,28 @@ class _BasicFormState extends State<BasicForm> {
                   TextFormField(
                     controller: nameController,
                     keyboardType: TextInputType.name,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       icon: const Icon(Icons.person),
-                      hintText: 'Enter your full name',
-                      labelText: 'Name',
+                      hintText: AppStrings.nameHint,
+                      labelText: AppStrings.nameLabel,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Name cannot be empty");
+                        return AppStrings.nameError;
                       }
                       return null;
                     },
                   ),
                   TextFormField(
                     keyboardType: TextInputType.phone,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       icon: const Icon(Icons.phone),
-                      hintText: 'Enter your phone number',
-                      labelText: 'Phone number',
+                      hintText: AppStrings.phoneHint,
+                      labelText: AppStrings.phoneLabel,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Phone number cannot be empty");
+                        return AppStrings.phoneError;
                       }
                       return null;
                     },
@@ -80,14 +81,14 @@ class _BasicFormState extends State<BasicForm> {
                       emailAddress = newValue ?? "";
                     },
                     keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       icon: const Icon(Icons.email),
-                      hintText: 'Enter your email address',
-                      labelText: 'Email Address',
+                      hintText: AppStrings.emailHint,
+                      labelText: AppStrings.emailLabel,
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return ("Email address cannot be empty");
+                        return AppStrings.emailError;
                       }
                       return null;
                     },
@@ -107,7 +108,7 @@ class _BasicFormState extends State<BasicForm> {
                   );
                 }
               },
-              child: Text("Submit"),
+              child: Text(AppStrings.submit),
             ),
           ],
         ),

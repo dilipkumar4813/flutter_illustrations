@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 
 class BasicNestedScrollView extends StatelessWidget {
   const BasicNestedScrollView({super.key});
@@ -9,8 +10,8 @@ class BasicNestedScrollView extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           // A flexible app bar
-          const SliverAppBar(
-            title: Text('App Bar'),
+          SliverAppBar(
+            title: Text(AppStrings.appBar),
             expandedHeight: 200,
             pinned: true,
           ),

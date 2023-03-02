@@ -25,13 +25,13 @@ class _MyHomePageState extends State<MyHomePage> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: const BoxDecoration(
                 color: Colors.blue,
               ),
               child: Text(
-                'Flutter References',
-                style: TextStyle(
+                AppStrings.appName,
+                style: const TextStyle(
                   fontSize: 24,
                   color: Colors.white,
                 ),

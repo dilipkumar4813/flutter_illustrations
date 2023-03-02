@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import '../../models/person.dart';
 import 'package:provider/provider.dart';
 
@@ -22,13 +23,14 @@ class _BasicChangeNotifierState extends State<BasicChangeNotifier> {
       body: SafeArea(
         child: Column(
           children: [
-            Text("Change Notifier ${Provider.of<Person>(context).name}"),
+            Text(
+                "${AppStrings.changeNotifier} ${Provider.of<Person>(context).name}"),
             ElevatedButton(
               onPressed: () {
                 Provider.of<Person>(context, listen: false)
-                    .updateContent(2, "John");
+                    .updateContent(2, AppStrings.cnName);
               },
-              child: Text("Update"),
+              child: Text(AppStrings.update),
             )
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class BasicDialogs extends StatelessWidget {
@@ -12,7 +13,7 @@ class BasicDialogs extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text("Basic Dialogs"),
+        title: Text(AppStrings.dialogScreen),
       ),
       body: SafeArea(
         child: Container(
@@ -23,51 +24,53 @@ class BasicDialogs extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const AlertDialog(
-                          title: Text("Alert Dialog"),
-                          content: Text("Dialog Content"),
-                        );
-                      });
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(AppStrings.dialogTitle),
+                        content: Text(AppStrings.dialogDescription),
+                      );
+                    },
+                  );
                 },
                 child: const Text("Dialog"),
               ),
               ElevatedButton(
                 onPressed: () {
                   showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text("Alert Dialog"),
-                          content: const Text("Dialog Content"),
-                          actions: [
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text("Close"),
-                            ),
-                          ],
-                        );
-                      });
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(AppStrings.dialogTitle),
+                        content: Text(AppStrings.dialogDescription),
+                        actions: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text("Close"),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
-                child: const Text("Action"),
+                child: Text(AppStrings.action),
               ),
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("This is a snack bar"),
+                    SnackBar(
+                      content: Text(AppStrings.snackbarInfo),
                     ),
                   );
                 },
-                child: const Text("Snack bar"),
+                child: Text(AppStrings.snackbar),
               ),
               ElevatedButton(
                 onPressed: () {
                   Fluttertoast.showToast(
-                    msg: "Hello Toast man",
+                    msg: AppStrings.toast,
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.CENTER,
                     timeInSecForIosWeb: 1,
@@ -76,7 +79,7 @@ class BasicDialogs extends StatelessWidget {
                     backgroundColor: Colors.black,
                   );
                 },
-                child: const Text("Toast"),
+                child: Text(AppStrings.toast),
               ),
             ],
           ),

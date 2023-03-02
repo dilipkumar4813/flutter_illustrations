@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 
 class BasicGridView extends StatelessWidget {
   const BasicGridView({super.key});
@@ -11,7 +12,7 @@ class BasicGridView extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text("Gridview"),
+        title: Text(AppStrings.gridview),
       ),
       body: GridView.count(
         crossAxisCount: 3,

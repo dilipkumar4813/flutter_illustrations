@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import 'package:http/http.dart' as http;
 import '../../models/album.dart';
 import 'dart:convert';
@@ -23,7 +24,7 @@ class _BasicHttp extends State<BasicHttp> {
     if (response.statusCode == 200) {
       return Album.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception('Failed to load album');
+      throw Exception(AppStrings.apiError);
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 
 class BasicAppBar extends StatelessWidget {
   const BasicAppBar({super.key});
@@ -28,7 +29,7 @@ class BasicAppBar extends StatelessWidget {
             width: 10.0,
           ),
         ],
-        title: const Text("Hello"),
+        title: Text(AppStrings.hello),
       ),
       body: SafeArea(
         child: Column(
@@ -37,7 +38,7 @@ class BasicAppBar extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Something else"),
+              child: Text(AppStrings.something),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import 'package:flutter_illustrations/utils/screens.dart';
 import '../../models/tlist.dart';
 
@@ -11,8 +12,10 @@ class BasicList extends StatefulWidget {
 
 class _BasicListState extends State<BasicList> {
   final List list = [
-    TList(title: "Test 1", description: "Basic 1 Description"),
-    TList(title: "Test 2", description: "Basic 2 Description")
+    TList(
+        title: AppStrings.list1Title, description: AppStrings.list1Description),
+    TList(
+        title: AppStrings.list2Title, description: AppStrings.list2Description)
   ];
 
   @override

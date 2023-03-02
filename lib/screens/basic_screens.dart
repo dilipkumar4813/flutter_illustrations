@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import '../models/home.dart';
 import 'package:flutter_illustrations/utils/routes/route_strings.dart';
 
@@ -6,18 +7,22 @@ class BasicScreens extends StatelessWidget {
   const BasicScreens({super.key});
 
   static List<Home> routes = [
-    Home(route: AppRoutes.containers, buttonTitle: "Basic Container"),
-    Home(route: AppRoutes.dialogs, buttonTitle: "Basic Dialogs"),
-    Home(route: AppRoutes.appBar, buttonTitle: "Basic Appbar"),
-    Home(route: AppRoutes.basicForm, buttonTitle: "Basic Form"),
-    Home(route: AppRoutes.basicHttp, buttonTitle: "Basic HTTP"),
-    Home(route: AppRoutes.basicChange, buttonTitle: "Change Notifier"),
-    Home(route: AppRoutes.basicList, buttonTitle: "Basic List"),
-    Home(route: AppRoutes.basicScrollView, buttonTitle: "Basic Scrollview"),
+    Home(route: AppRoutes.containers, buttonTitle: AppStrings.basicContainers),
+    Home(route: AppRoutes.dialogs, buttonTitle: AppStrings.basicDialogs),
+    Home(route: AppRoutes.appBar, buttonTitle: AppStrings.basicAppBar),
+    Home(route: AppRoutes.basicForm, buttonTitle: AppStrings.basicForm),
+    Home(route: AppRoutes.basicHttp, buttonTitle: AppStrings.basicHttp),
+    Home(
+        route: AppRoutes.basicChange,
+        buttonTitle: AppStrings.basicChangeNotifier),
+    Home(route: AppRoutes.basicList, buttonTitle: AppStrings.basicLists),
+    Home(
+        route: AppRoutes.basicScrollView,
+        buttonTitle: AppStrings.basicScrollView),
     Home(
         route: AppRoutes.basicNestedScrollView,
-        buttonTitle: "Basic Nested Scrollview"),
-    Home(route: AppRoutes.basicGridView, buttonTitle: "Basic Gridview"),
+        buttonTitle: AppStrings.basicNestedScrollView),
+    Home(route: AppRoutes.basicGridView, buttonTitle: AppStrings.basicGridView),
   ];
 
   @override
@@ -25,7 +30,7 @@ class BasicScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: const Text("Basics"),
+        title: Text(AppStrings.basic),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),

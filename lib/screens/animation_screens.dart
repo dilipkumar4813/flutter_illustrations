@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 import '../models/home.dart';
 import 'package:flutter_illustrations/utils/routes/route_animations.dart';
 
@@ -6,16 +7,18 @@ class AnimationsScreens extends StatelessWidget {
   const AnimationsScreens({super.key});
 
   static List<Home> routes = [
-    Home(route: AppAnimationsRoutes.lottieAnimation, buttonTitle: "Lottie"),
+    Home(
+        route: AppAnimationsRoutes.lottieAnimation,
+        buttonTitle: AppStrings.lottie),
     Home(
         route: AppAnimationsRoutes.materialDialogs,
-        buttonTitle: "Material Dialogs"),
+        buttonTitle: AppStrings.materialDialogs),
     Home(
         route: AppAnimationsRoutes.imageCarouselAnimation,
-        buttonTitle: "Image Carousel"),
+        buttonTitle: AppStrings.imageCarousel),
     Home(
         route: AppAnimationsRoutes.textAnimations,
-        buttonTitle: "Text Animations"),
+        buttonTitle: AppStrings.textAnimations),
   ];
 
   @override
@@ -23,7 +26,7 @@ class AnimationsScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: const Text("Animations"),
+        title: Text(AppStrings.animation),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -49,7 +52,7 @@ class AnimationsScreens extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, routes[index].route);
                       },
-                      child: Text("${routes[index].buttonTitle}"),
+                      child: Text(routes[index].buttonTitle),
                     ),
                   ),
                 ),

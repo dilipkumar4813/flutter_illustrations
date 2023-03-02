@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_illustrations/utils/app_strings.dart';
 
 class BasicContainers extends StatelessWidget {
   const BasicContainers({super.key});
@@ -13,8 +14,8 @@ class BasicContainers extends StatelessWidget {
               height: 10.5,
             ),
             Text(
-              "Containers",
-              style: TextStyle(
+              AppStrings.containers,
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 18.5,
               ),
@@ -22,26 +23,26 @@ class BasicContainers extends StatelessWidget {
             const SizedBox(
               height: 10.5,
             ),
-            RowEvenlyWidget(),
+            const RowEvenlyWidget(),
             Expanded(
               child: Container(
                 color: Colors.teal,
                 alignment: Alignment.centerLeft,
-                child: Text("Left Align"),
+                child: Text(AppStrings.leftAlign),
               ),
             ),
             Expanded(
               child: Container(
                 color: Colors.red,
                 alignment: Alignment.center,
-                child: Text("Center Align"),
+                child: Text(AppStrings.centerAlign),
               ),
             ),
             Expanded(
               child: Container(
                 color: Colors.blueAccent,
                 alignment: Alignment.centerRight,
-                child: Text("Right Align"),
+                child: Text(AppStrings.rightAlign),
               ),
             ),
             Stack(
@@ -59,9 +60,9 @@ class BasicContainers extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Back"),
+              child: Text(AppStrings.back),
             ),
-            BottomContainerWidget(),
+            const BottomContainerWidget(),
           ],
         ),
       ),
